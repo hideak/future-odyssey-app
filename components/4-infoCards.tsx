@@ -50,7 +50,7 @@ const InfoCards = () => {
           <p className="text-sm text-slate-300 mb-6">Trace sua rota até o local do nosso casamento ou peça um transporte via aplicativo da Uber.</p>
           <div className="flex justify-center gap-4">
             <a 
-              href="https://www.google.com/maps" 
+              href="https://maps.app.goo.gl/ezYQExTbgH8i8gFx8" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 bg-blue-400/20 hover:bg-blue-400/30 text-blue-400 border border-blue-400/50 rounded-full text-sm font-semibold transition-colors"

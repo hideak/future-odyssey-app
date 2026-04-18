@@ -26,7 +26,7 @@ const Story = () => {
           <div className="max-w-3xl mx-auto space-y-6">
             <p className="text-xl text-slate-200 leading-relaxed font-light">
               Nossa jornada começou em pontos distantes do mapa, separados por <span className="text-purple-300 font-bold">~6.583 km</span>. 
-              De um lado, o calor do <span className="text-emerald-400 font-medium">Brasil</span>; do outro, a imensidão dos <span className="text-blue-400 font-medium">Estados Unidos</span>.
+              De um lado, o calor do <span className="text-emerald-400 font-medium">Brasil</span>; do outro, a frio dos <span className="text-blue-400 font-medium">Estados Unidos</span>.
             </p>
             <p className="text-lg text-slate-300 leading-relaxed">
               O que para muitos parecia um abismo, para nós foi apenas o espaço necessário para o nosso amor florescer. 
@@ -43,7 +43,7 @@ const Story = () => {
 
             <div className="flex flex-col items-center p-6 glass rounded-2xl hover:bg-white/10 transition-colors">
               <Heart className="w-10 h-10 text-purple-400 mb-4 fill-purple-400/20" />
-              <span className="text-3xl font-bold text-slate-100">4 Anos</span>
+              <span className="text-3xl font-bold text-slate-100">3 anos e 5 meses</span>
               <span className="text-sm text-slate-400 uppercase tracking-widest mt-2">de Namoro</span>
             </div>
 

@@ -5,7 +5,7 @@ import { Heart, CreditCard, QrCode, Copy, Check } from 'lucide-react';
 
 const GiftSection = () => {
   const [copied, setCopied] = useState(false);
-  const pixKey = "exemplo@email.com";
+  const pixKey = "386b6249-5f19-4fc4-b59a-b81b948c849b";
 
   const giftOptions = [
     { label: "Ajuda para a Lua de Mel", value: "R$ 50,00" },
@@ -40,7 +40,7 @@ const GiftSection = () => {
           <div className="glass p-8 rounded-3xl border-purple-500/30 hover:border-purple-500/50 transition-all group">
             <QrCode className="w-12 h-12 text-purple-400 mx-auto mb-6 group-hover:scale-110 transition-transform" />
             <h3 className="text-2xl font-bold mb-4 text-slate-100">Pix</h3>
-            <p className="text-slate-400 mb-6">Chave Pix (E-mail):</p>
+            <p className="text-slate-400 mb-6">Chave Pix (Aleatória):</p>
             <div className="bg-white/5 p-4 rounded-xl border border-white/10 font-mono text-purple-300 break-all mb-4">
               {pixKey}
             </div>
