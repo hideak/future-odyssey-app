@@ -55,7 +55,7 @@ const Hero = () => {
           Vamos celebrar o amor?
         </p>
         <p className="text-6xl md:text-8xl font-cursive text-purple-200 drop-shadow-[0_0_15px_rgba(216,180,254,0.3)] mt-2">
-          Junior & Brenda
+          Junior <br /> <span className="text-7xl">&</span> <br /> Brenda
         </p>
       </div>
 

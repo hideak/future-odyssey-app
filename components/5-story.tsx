@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { MessageCircle, MapPin, Heart, Globe } from 'lucide-react';
+import { MessageCircle, MapPin, Heart, Globe, Camera } from 'lucide-react';
 
 const Story = () => {
   return (
@@ -43,22 +43,22 @@ const Story = () => {
 
             <div className="flex flex-col items-center p-6 glass rounded-2xl hover:bg-white/10 transition-colors">
               <Heart className="w-10 h-10 text-purple-400 mb-4 fill-purple-400/20" />
-              <span className="text-3xl font-bold text-slate-100">3 anos e 5 meses</span>
+              <span className="text-3xl font-bold text-slate-100">3 anos e 7 meses</span>
               <span className="text-sm text-slate-400 uppercase tracking-widest mt-2">de Namoro</span>
             </div>
 
             <div className="flex flex-col items-center p-6 glass rounded-2xl hover:bg-white/10 transition-colors">
               <div className="relative mb-4">
-                <MapPin className="w-10 h-10 text-blue-400" />
-                <div className="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full animate-ping" />
+                <Camera className="w-10 h-10 text-blue-400" />
+                <div className="absolute top-0 right-0 w-3 h-3 bg-yellow-500 rounded-full animate-ping" />
               </div>
-              <span className="text-3xl font-bold text-slate-100">Infinitas</span>
-              <span className="text-sm text-slate-400 uppercase tracking-widest mt-2">Memórias</span>
+              <span className="text-3xl font-bold text-slate-100">6.500+</span>
+              <span className="text-sm text-slate-400 uppercase tracking-widest mt-2">Fotos e Selfies</span>
             </div>
           </div>
 
           <p className="text-xl text-purple-200 font-serif italic pt-8">
-            "Após quilômetros de saudade e oceanos de conversas, decidimos que nosso destino final é um só: o nós."
+            "Por que gastei tanto tempo em vão, se minha vida começou quando encontrei você."
           </p>
         </div>
       </div>
