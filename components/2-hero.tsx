@@ -6,35 +6,37 @@ import { WEDDING_CONFIG } from '@/config/wedding';
 
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState({ dias: 0, horas: 0, minutos: 0, segundos: 0 });
-  const [timeStatus, setTimeStatus] = useState<'counting' | 'today' | 'past'>('counting');
+  const [isMarried, setIsMarried] = useState(false);
 
   const weddingDate = useMemo(() => new Date(WEDDING_CONFIG.dataCasamento), []);
 
   useEffect(() => {
-    const calculateTimeLeft = () => {
+    const calculateTime = () => {
       const now = new Date();
-      
-      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-      const weddingDay = new Date(weddingDate.getFullYear(), weddingDate.getMonth(), weddingDate.getDate());
+      const difference = weddingDate.getTime() - now.getTime();
 
-      if (today > weddingDay) {
-        setTimeStatus('past');
-      } else if (today.getTime() === weddingDay.getTime()) {
-        setTimeStatus('today');
-      } else {
-        setTimeStatus('counting');
-        const distance = weddingDate.getTime() - now.getTime();
+      if (difference > 0) {
+        setIsMarried(false);
         setTimeLeft({
-          dias: Math.floor(distance / (1000 * 60 * 60 * 24)),
-          horas: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutos: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-          segundos: Math.floor((distance % (1000 * 60)) / 1000)
+          dias: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          horas: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutos: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          segundos: Math.floor((difference % (1000 * 60)) / 1000)
+        });
+      } else {
+        setIsMarried(true);
+        const elapsed = Math.abs(difference);
+        setTimeLeft({
+          dias: Math.floor(elapsed / (1000 * 60 * 60 * 24)),
+          horas: Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutos: Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60)),
+          segundos: Math.floor((elapsed % (1000 * 60)) / 1000)
         });
       }
     };
 
-    calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 1000);
+    calculateTime();
+    const timer = setInterval(calculateTime, 1000);
 
     return () => clearInterval(timer);
   }, [weddingDate]);
@@ -59,7 +61,13 @@ const Hero = () => {
         </p>
       </div>
 
-      {timeStatus === 'counting' && (
+      <div className="flex flex-col items-center gap-4 w-full">
+        {isMarried && (
+          <p className="text-xl md:text-2xl font-serif text-purple-300 animate-fade-in mb-2">
+            Casados há:
+          </p>
+        )}
+        
         <div className="grid grid-cols-4 gap-3 md:gap-6 max-w-2xl w-full mx-auto animate-slide-in-bottom fill-mode-both">
           {[
             { label: 'Dias', value: timeLeft.dias },
@@ -77,19 +85,7 @@ const Hero = () => {
             </div>
           ))}
         </div>
-      )}
-
-      {timeStatus === 'today' && (
-        <div className="glass p-8 rounded-3xl max-w-xl mx-auto animate-pulse animate-fade-in fill-mode-both">
-          <p className="text-3xl md:text-5xl font-serif text-purple-300">O grande dia chegou!</p>
-        </div>
-      )}
-
-      {timeStatus === 'past' && (
-        <div className="glass p-8 rounded-3xl max-w-xl mx-auto animate-fade-in fill-mode-both">
-          <p className="text-3xl md:text-4xl font-serif text-slate-300">O casamento foi finalizado</p>
-        </div>
-      )}
+      </div>
 
       <button 
         onClick={scrollToContent}
