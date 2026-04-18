@@ -41,7 +41,7 @@ const GiftSection = () => {
             <QrCode className="w-12 h-12 text-purple-400 mx-auto mb-6 group-hover:scale-110 transition-transform" />
             <h3 className="text-2xl font-bold mb-4 text-slate-100">Pix</h3>
             <p className="text-slate-400 mb-6">Chave Pix (Aleatória):</p>
-            <div className="bg-white/5 p-4 rounded-xl border border-white/10 font-mono text-purple-300 break-all mb-4">
+            <div className="bg-white/5 p-4 rounded-xl border border-white/10 font-mono text-purple-300 text-xs break-all mb-4">
               {pixKey}
             </div>
             <button

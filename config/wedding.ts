@@ -6,6 +6,7 @@ export const WEDDING_CONFIG = {
     "/images/image-02.jpg",
     "/images/image-03.jpg",
     "/images/image-04.jpg",
-    "/images/image-05.jpg"
+    "/images/image-05.webp",
+    "/images/image-06.jpg"
   ]
 };
